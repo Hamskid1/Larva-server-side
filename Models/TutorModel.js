@@ -20,4 +20,4 @@ const tutorSchema = mongoose.Schema({
     },
 },{timestamps:true});
 const Tutor = mongoose.model('Tutor', tutorSchema);
-module.exports = Tutor;
+export default Tutor;

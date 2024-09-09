@@ -3,6 +3,7 @@ import dotenv from "dotenv"
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser"
 import cors from "cors"
+import routers from "./Routers/index.js";
 
 
 const app = express()
@@ -10,6 +11,8 @@ dotenv.config()
 app.use(express.json())
 app.use(cors())
 app.use(cookieParser())
+app.use(routers)
+app.use('/api/v1',routers)
 
 
 
