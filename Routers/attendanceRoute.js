@@ -3,9 +3,9 @@ import { createAttendance, readAttendance, updateAttendance } from '../Controlle
 
 const router = Router();
 
-router.post('/api/attendance', createAttendance);
-router.get('/api/attendance', readAttendance);
-router.put('/api/attendance/:id', updateAttendance);
+router.post('/attendance', createAttendance);
+router.get('/attendance', readAttendance);
+router.put('/attendance/:id', updateAttendance);
 
 
 export default router;
