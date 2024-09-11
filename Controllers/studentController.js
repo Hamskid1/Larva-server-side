@@ -1,4 +1,3 @@
-// controllers/studentController.js
 import Student from '../models/StudentsModels.js'; 
 
 // @desc   Create a new student

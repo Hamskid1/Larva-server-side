@@ -7,7 +7,7 @@ const tutorSchema = mongoose.Schema({
     },
     email: {
         type: String,
-        required: true
+        Crequired: true
     },
     phone: {
         type: String,
