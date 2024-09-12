@@ -17,9 +17,6 @@ export const getTutors = async (req, res) => {
 
 // Register a new tutor with hashed password
 export const postTutor = async (req, res) => {
-    if (!name || !email || !phone || !password) {
-                return res.status(400).json({ message: "All fields are required" });
-            }
     try {
         const { name, email, phone, password } = req.body;
         const saltRounds = 10;
@@ -44,7 +41,7 @@ export const loginTutor = async (req, res) => {
     try {
         const { email, password } = req.body;
         const tutor = await Tutor.findOne({ email: email });
-        
+    
         if (!tutor) {
             return res.status(404).json({ message: "Tutor not found" });
         }

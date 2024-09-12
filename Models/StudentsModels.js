@@ -18,9 +18,9 @@ const studentSchema = mongoose.Schema({
         required: true,
         enum: ['A', 'B', 'C', 'D', 'E']
         },
-        Tutor:{
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Tutor'
+    Tutor:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Tutor',
         }
 },{timestamps : true});
 

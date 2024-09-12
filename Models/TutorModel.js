@@ -7,7 +7,7 @@ const tutorSchema = mongoose.Schema({
     },
     email: {
         type: String,
-        Crequired: true
+        required: true
     },
     phone: {
         type: String,
@@ -18,6 +18,11 @@ const tutorSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    Student: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Student',
+    }]
+
 },{timestamps:true});
 const Tutor = mongoose.model('Tutor', tutorSchema);
 export default Tutor;

@@ -11,8 +11,9 @@ router.post("/login", loginTutor);
 
 // Protected routes
 router.get("/authStatus", headerAuth, authStatus);
-router.post("/logout", headerAuth, tutorLogout); 
-router.put("/tutors:id", headerAuth, putSingleTutor); 
+router.get("/logout",tutorLogout); 
+router.get("/status", headerAuth, authStatus); 
+router.put("/tutors:id", headerAuth, putSingleTutor);
 router.delete("/tutors:id", headerAuth, deleteSingleTutor); 
 
 export default router;
