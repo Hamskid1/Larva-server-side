@@ -52,7 +52,7 @@ export const loginSuperAdmin = async (req, res) => {
         const { email, password } = req.body;
 
         // Check if SuperAdmin exists
-        const superAdmin = await SuperAdmin.findOne({ email });
+        const superAdmin = await SuperAdmin.findOne({ email: email });
         if (!superAdmin) {
             return res.status(404).json({ message: "Super admin not found" });
         }
@@ -65,7 +65,7 @@ export const loginSuperAdmin = async (req, res) => {
 
         // Generate JWT Token
         const token = jwt.sign({ id: superAdmin._id, role: superAdmin.role }, process.env.SECRET_KEY, {
-            expiresIn: process.env.JWT_EXPIRES_IN
+            expiresIn: process.env.EXPIRATION
         });
 
         return res.status(200).json({ message: "Login successful", token });
