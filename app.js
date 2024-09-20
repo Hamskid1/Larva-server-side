@@ -9,7 +9,8 @@ import routers from "./Routers/index.js";
 const app = express()
 dotenv.config()
 app.use(express.json())
-app.use(cors())
+app.use(cors(
+))
 app.use(cookieParser())
 app.use(routers)
 app.use('/api/v1',routers)
